@@ -16,12 +16,11 @@ model User {
   createdAt DateTime @default(now())
 }
 
-
 model Note {
   id        String   @id @default(uuid())
   title     String
   content   String
-  tags      String[]? @default([])
+  tags      String[] @default([])   // ✅ FIXED
   summary   String?
   userId    String
   user      User     @relation(fields: [userId], references: [id])
