@@ -66,7 +66,7 @@ app.post("/", async (c) => {
     
     return c.json({ token, user: { id: user.id, name: user.name, email: user.email } });
   } catch (err: any) {
-    return c.json({ error: "Invalid input" }, 400);
+    return c.json({ error: "Error occurs",err }, 400);
   }
 });
 
